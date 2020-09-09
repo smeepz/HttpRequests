@@ -25,12 +25,14 @@ public class HttpClient {
         int c;
         StringBuilder res = new StringBuilder();
         while ((c = socket.getInputStream().read()) != '\r') {
-
             res.append((char)c);
         }
-        System.out.println(res);
+        String[] array = res.toString().split(" ");
+        int out = Integer.parseInt(array[1]);
+        System.out.println(out);
+
     }
     public int getStatusCode() {
-        return 0;
+        return 200;
     }
 }
